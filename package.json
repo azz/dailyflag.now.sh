@@ -6,9 +6,13 @@
   "main": "./index.js",
   "author": "Lucas Azzola <derflatulator@gmail.com>",
   "license": "MIT",
+  "now": {
+    "alias": "dailyflag.now.sh"
+  },
   "scripts": {
     "dev": "micro-dev",
-    "start": "micro"
+    "start": "micro",
+    "deploy": "now --replace --public && now alias && now remove dailyflag.now.sh --safe"
   },
   "devDependencies": {
     "micro-dev": "^2.2.0"
