@@ -5,8 +5,7 @@ const countries = require("svg-country-flags/countries");
 const codes = Object.keys(countries);
 const { send } = require("micro");
 
-const CDN =
-  "https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.0.0/flags/4x3/";
+const CDN = "https://cdn.rawgit.com/hjnilsson/country-flags/6dc35d6c/svg/";
 
 const styles = `
   <style>
@@ -64,6 +63,7 @@ module.exports = async (req, res) => {
       }
       .Flag {
         flex-grow: 1;
+        object-fit: contain;
       }
       .Title {
         padding: 0.5em;
@@ -73,7 +73,7 @@ module.exports = async (req, res) => {
     </head>
     
     <div class=Container>
-      <img class=Flag src="${CDN}${code.toLowerCase()}.svg" style="object-fit: contain;">
+      <img class=Flag src="${CDN}${code.toLowerCase()}.svg">
       <h1 class=Title>${title}</h1>
     </div>
   `;
