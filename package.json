@@ -1,0 +1,20 @@
+{
+  "name": "dailyflag.now.sh",
+  "version": "0.0.0",
+  "homepage": "https://dailyflag.now.sh/",
+  "description": "Flag of the Day",
+  "main": "./index.js",
+  "author": "Lucas Azzola <derflatulator@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "micro-dev",
+    "start": "micro"
+  },
+  "devDependencies": {
+    "micro-dev": "^2.2.0"
+  },
+  "dependencies": {
+    "micro": "^9.1.0",
+    "svg-country-flags": "^1.2.1"
+  }
+}
