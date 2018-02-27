@@ -66,15 +66,19 @@ module.exports = async (req, res) => {
         object-fit: contain;
       }
       .Title {
-        padding: 0.5em;
+        padding: 0;
+      }
+      .Footer {
+        text-align: right;
       }
       </style>
       <title>${title}</title>
     </head>
     
     <div class=Container>
-      <img class=Flag src="${CDN}${code.toLowerCase()}.svg">
       <h1 class=Title>${title}</h1>
+      <img class=Flag src="${CDN}${code.toLowerCase()}.svg">
+      <pre class=Footer><a href="https://github.com/azz/dailyflag.now.sh">Source</a></pre>
     </div>
   `;
 };
