@@ -12,7 +12,7 @@
   "scripts": {
     "dev": "micro-dev",
     "start": "micro",
-    "deploy": "now --replace --public && now alias && now remove dailyflag.now.sh --safe"
+    "deploy": "now --replace --public && sleep 20 && now alias && now remove dailyflag.now.sh --safe"
   },
   "devDependencies": {
     "micro-dev": "^2.2.0"
@@ -24,6 +24,7 @@
     "iso3166-1": "^0.3.0",
     "mem": "^3.0.0",
     "micro": "^9.1.0",
+    "request-ip": "^2.0.2",
     "shuffle-array": "^1.0.1",
     "timeago.js": "^3.0.2"
   }

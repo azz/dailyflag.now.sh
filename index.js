@@ -1,6 +1,7 @@
 const getTimeZoneOffset = require("get-timezone-offset");
 const countries = require("iso3166-1/data/countries");
 const shuffleArray = require("shuffle-array");
+const requestIp = require("request-ip");
 const timeago = require("timeago.js");
 const { send } = require("micro");
 const { get } = require("axios");
@@ -108,12 +109,15 @@ const dayToMs = day => day * 1000 * 60 * 60 * 24;
 
 const getDayValue = async req => {
   const { query } = url.parse(req.url, true);
-  const ip = req.connection.remoteAddress;
-
-  const { timezone = "UTC" } = query.timezone ? query : await ipLocation(ip);
+  const timezone = query.tz || (await getLocation(req)) || "UTC";
   const offset = getTimeZoneOffset(timezone, new Date()) / 60;
 
   return msToDay(Date.now(), offset);
+};
+
+const getLocation = async req => {
+  const ip = requestIp.getClientIp(req);
+  return (await ipLocation(ip)).time_zone;
 };
 
 const notFound = res =>
