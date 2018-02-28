@@ -18,7 +18,13 @@
     "micro-dev": "^2.2.0"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "get-timezone-offset": "^1.0.3",
+    "iplocation": "^5.0.0",
+    "iso3166-1": "^0.3.0",
+    "mem": "^3.0.0",
     "micro": "^9.1.0",
-    "svg-country-flags": "^1.2.1"
+    "shuffle-array": "^1.0.1",
+    "timeago.js": "^3.0.2"
   }
 }
