@@ -116,8 +116,12 @@ const getDayValue = async req => {
 };
 
 const getLocation = async req => {
-  const ip = requestIp.getClientIp(req);
-  return (await ipLocation(ip)).time_zone;
+  try {
+    const ip = requestIp.getClientIp(req);
+    return (await ipLocation(ip)).time_zone;
+  } catch (_e) {
+    return null;
+  }
 };
 
 const notFound = res =>
